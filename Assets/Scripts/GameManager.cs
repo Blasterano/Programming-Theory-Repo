@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI playerName;
+    public bool isSelected = false;
 
     // Start is called before the first frame update
     void Start()

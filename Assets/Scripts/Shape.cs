@@ -5,32 +5,43 @@ using static UnityEditor.PlayerSettings;
 
 public class Shape : MonoBehaviour
 {
-    [SerializeField]
-    float duration = 2;
+    private string shapeName;
+    private Vector3 shapePos;
+
+    protected GameManager gameManager;
+    protected float duration = 2;
 
     public Transform placeHolder;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        gameManager = FindObjectOfType<GameManager>();
+        shapePos = this.transform.position;
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnMouseDown()
     {
-        Debug.Log(name);
-        StartCoroutine(Displace(placeHolder.position, duration));
+        if (gameManager.isSelected && this.gameObject.name==shapeName)
+        {
+            Debug.Log(" 1st if" + shapeName);
+            StartCoroutine(Displace(shapePos, duration));
+            gameManager.isSelected = false;
+            shapeName = null;
+        }
+        else if (!gameManager.isSelected && shapeName == null)
+        {
+            Debug.Log(" 2nd if"+shapeName);
+            StartCoroutine(Displace(placeHolder.position, duration));
+            gameManager.isSelected = true;
+            shapeName = this.gameObject.name;
+        }
     }
 
-    IEnumerator Displace(Vector3 targetPosition,float duration)
+    public IEnumerator Displace(Vector3 targetPosition,float duration)
     {
         float time = 0;
-        Vector3 startPos=transform.position;
+        Vector3 startPos = transform.position;
 
         while (time < duration)
         {
