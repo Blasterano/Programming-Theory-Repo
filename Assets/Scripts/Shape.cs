@@ -12,6 +12,8 @@ public class Shape : MonoBehaviour
     protected float duration = 2;
 
     public Transform placeHolder;
+    public Animator overlay;
+    //public Animator Name;
 
     private void Awake()
     {
@@ -21,26 +23,29 @@ public class Shape : MonoBehaviour
     }
 
     private void OnMouseDown()
-    {
+    {   
+
         if (gameManager.isSelected && this.gameObject.name==shapeName)
         {
-            Debug.Log(" 1st if" + shapeName);
             StartCoroutine(Displace(shapePos, duration));
+            gameManager.UIAnimation(false);
             gameManager.isSelected = false;
             shapeName = null;
         }
         else if (!gameManager.isSelected && shapeName == null)
         {
-            Debug.Log(" 2nd if"+shapeName);
             StartCoroutine(Displace(placeHolder.position, duration));
+            gameManager.UIAnimation(true);
             gameManager.isSelected = true;
             shapeName = this.gameObject.name;
         }
+
     }
 
     public IEnumerator Displace(Vector3 targetPosition,float duration)
     {
         float time = 0;
+
         Vector3 startPos = transform.position;
 
         while (time < duration)
