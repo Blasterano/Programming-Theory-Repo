@@ -4,9 +4,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
-public class Shape : MonoBehaviour
+public abstract class Shape : MonoBehaviour
 {
-    private string shapeName;
+    public string shapeName { get;protected set; }
+
+    private string selectedShapeName;
     private Vector3 shapePos;
     private Animator multiColor;
 
@@ -18,34 +20,39 @@ public class Shape : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         multiColor = GetComponent<Animator>();
         shapePos = this.transform.position;
     }
-
+    
     private void OnMouseDown()
-    {   
+    {
+        ShapeBehaviour();
 
-        if (gameManager.isSelected && this.gameObject.name==shapeName)
+    }
+    private void ShapeBehaviour()
+    {
+
+        if (gameManager.isSelected && this.gameObject.name == selectedShapeName)
         {
             StartCoroutine(Displace(shapePos, duration));
             gameManager.UIAnimation(false);
             gameManager.isSelected = false;
             multiColor.SetTrigger("color");
-            shapeName = null;
+            selectedShapeName = null;
         }
-        else if (!gameManager.isSelected && shapeName == null)
+        else if (!gameManager.isSelected && selectedShapeName == null)
         {
             StartCoroutine(Displace(placeHolder.position, duration));
+            Description();
+
             gameManager.UIAnimation(true);
             gameManager.isSelected = true;
             multiColor.SetTrigger("color");
-            shapeName = this.gameObject.name;
+            selectedShapeName = this.gameObject.name;
         }
-
-        if (!gameManager.isSelected)
-            multiColor.Play("Idle");
     }
+    public abstract void Description();
 
     public IEnumerator Displace(Vector3 targetPosition,float duration)
     {
@@ -60,5 +67,20 @@ public class Shape : MonoBehaviour
             yield return null;
         }
         transform.position = targetPosition;
+    }
+
+    public void SecondaryInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gameManager.isSelected && this.gameObject.name == selectedShapeName)
+            {
+                StartCoroutine(Displace(shapePos, duration));
+                gameManager.UIAnimation(false);
+                gameManager.isSelected = false;
+                multiColor.SetTrigger("color");
+                selectedShapeName = null;
+            }
+        }
     }
 }

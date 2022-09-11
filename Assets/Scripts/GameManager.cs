@@ -6,6 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI playerName;
+    public TextMeshProUGUI shapeName;
+    public TextMeshProUGUI shapeDescription;
     public Animator nameColor;
     public Animator overlay;
     public GameObject description;
