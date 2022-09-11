@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - placeHolder: {instanceID: 0}
   - overlay: {instanceID: 0}
+  - multiColor: {fileID: 2100000, guid: 9b5f83d1a75365d40af0537285973173, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

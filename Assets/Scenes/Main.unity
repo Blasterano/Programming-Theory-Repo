@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 409332215}
   - component: {fileID: 409332214}
   - component: {fileID: 409332218}
+  - component: {fileID: 409332219}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -311,7 +312,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9b5f83d1a75365d40af0537285973173, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -370,6 +371,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeHolder: {fileID: 1783619896}
   overlay: {fileID: 1250547799}
+--- !u!95 &409332219
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409332213}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c5c5821777a6e244a54c5530f97833a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &416421129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,6 +1829,7 @@ GameObject:
   - component: {fileID: 1672891376}
   - component: {fileID: 1672891375}
   - component: {fileID: 1672891379}
+  - component: {fileID: 1672891380}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1848,7 +1870,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9b5f83d1a75365d40af0537285973173, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1907,6 +1929,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeHolder: {fileID: 1783619896}
   overlay: {fileID: 1250547799}
+--- !u!95 &1672891380
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672891374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c5c5821777a6e244a54c5530f97833a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1716097942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,7 +2032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783619895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 1, z: -4.5}
+  m_LocalPosition: {x: -3, y: 1, z: -4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2010,6 +2052,7 @@ GameObject:
   - component: {fileID: 1829198896}
   - component: {fileID: 1829198895}
   - component: {fileID: 1829198899}
+  - component: {fileID: 1829198900}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -2051,7 +2094,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9b5f83d1a75365d40af0537285973173, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2110,3 +2153,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeHolder: {fileID: 1783619896}
   overlay: {fileID: 1250547799}
+--- !u!95 &1829198900
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829198894}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c5c5821777a6e244a54c5530f97833a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
