@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
+    // ENCAPSULATION
     public static DataManager instance { get; private set; }
 
     public string playerName;

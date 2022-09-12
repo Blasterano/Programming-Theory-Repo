@@ -16,13 +16,14 @@ public class Cube : Shape
         SecondaryInput();
     }
 
+    // POLYMORPHISM
     public override void Description()
     {
-        gameManager.shapeName.text = shapeName;
-        gameManager.shapeDescription.text = "This is a CUBE.\n" +
-            "It has 6 Faces, 12 Edges, 12 Vertices.\n" +
-            "Its 2D form is a SQUARE.\n" +
-            "Total Surface Area: 6*(side)^2\n" +
-            "Volume: (side)^3";
+        string description = "This is a CUBE.\n" +
+             "It has 6 Faces, 12 Edges, 12 Vertices.\n" +
+             "Its 2D form is a SQUARE.\n" +
+             "Total Surface Area: 6*(side)^2\n" +
+             "Volume: (side)^3";
+        gameManager.SetShapeProperties(shapeName,description);
     }
 }

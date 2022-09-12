@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private TextMeshProUGUI shapeName;
+    [SerializeField]
+    private TextMeshProUGUI shapeDescription;
+
     public TextMeshProUGUI playerName;
-    public TextMeshProUGUI shapeName;
-    public TextMeshProUGUI shapeDescription;
     public Animator nameColor;
     public Animator overlay;
     public GameObject description;
@@ -25,6 +28,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+    }
+    // ABSTRACTION
+    public void SetShapeProperties(string name, string description)
+    {
+        shapeName.text = name;
+        shapeDescription.text = description;
     }
 
     public void UIAnimation(bool value)

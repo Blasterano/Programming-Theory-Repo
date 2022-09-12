@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sphere : Shape
@@ -17,13 +18,14 @@ public class Sphere : Shape
         SecondaryInput();
     }
 
+    // POLYMORPHISM
     public override void Description()
     {
-        gameManager.shapeName.text = shapeName;
-        gameManager.shapeDescription.text = "This is a Sphere.\n" +
+        string description = "This is a Sphere.\n" +
             "Every point on its surface are equidistant from its centre.\n" +
             "Its 2D form is a Circle.\n" +
             "Total Surface Area: 4*pi*r^2\n" +
             "Volume: 4/3*r^3";
+        gameManager.SetShapeProperties(shapeName, description);
     }
 }

@@ -420,9 +420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe0396240cdd8d4ea769b2de0b4dc87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: {fileID: 951964304}
   shapeName: {fileID: 63213309}
   shapeDescription: {fileID: 1202219268}
+  playerName: {fileID: 951964304}
   nameColor: {fileID: 951964306}
   overlay: {fileID: 1250547799}
   description: {fileID: 1716097942}

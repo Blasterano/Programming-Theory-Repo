@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
+// INHERITANCE
 public abstract class Shape : MonoBehaviour
 {
+    // ENCAPSULATION
     public string shapeName { get;protected set; }
 
     private string selectedShapeName;
@@ -30,6 +31,7 @@ public abstract class Shape : MonoBehaviour
         ShapeBehaviour();
 
     }
+    // ABSTRACTION
     private void ShapeBehaviour()
     {
 
@@ -52,6 +54,7 @@ public abstract class Shape : MonoBehaviour
             selectedShapeName = this.gameObject.name;
         }
     }
+    // POLYMORPHISM
     public abstract void Description();
 
     public IEnumerator Displace(Vector3 targetPosition,float duration)
